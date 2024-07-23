@@ -45,5 +45,27 @@ class MainActivity : ComponentActivity() {
             }
         }
         Log.i("operation", performOperation(5,5,"+").toString())
+
+
+        var pruebalista = mapOf("hola" to "Driss", "hola" to "Eloy", "hola" to "Juan", "hola" to "Casimiro")
+        Log.i("Maps", pruebalista.map { "${it.key} a ${it.value}" }.joinToString(", "))
+        data class Person(val name: String, val age: Int, val gender: String){
+                fun copia() = "$name, $age, $gender"
+        }
+        data class Student(val name: String, val age: Int, val gender: String, val studentId: String){
+            fun copia () = "\"$name, $age, $gender, $studentId\""
+        }
+        var andr = Person("andres", 18, "Hombre")
+        var andr5 = Person("Lo que sea", 18, "Mujer")
+        var andr51 = Student("Lo que sea", 18, "Mujer", "12345679")
+        var andr2 = Student("andres", 18, "Hombre", "123456789")
+        var list1 = listOf(andr, andr5)
+        var list2 = listOf(andr51, andr2)
+        fun PearToStud (X : String): String {
+            var finding = list2.find { name -> X.equals(name) }
+            return finding.toString()
+        }
+        Log.i("findings", PearToStud(andr.name))
+
     }
 }
