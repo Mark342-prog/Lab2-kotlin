@@ -47,8 +47,8 @@ class MainActivity : ComponentActivity() {
         Log.i("operation", performOperation(5,5,"+").toString())
 
 
-        var pruebalista = mapOf("hola" to "Driss", "hola" to "Eloy", "hola" to "Juan", "hola" to "Casimiro")
-        Log.i("Maps", pruebalista.map { "${it.key} a ${it.value}" }.joinToString(", "))
+        var pruebalista = mapOf("Driss" to "hola Driss", "Eloy" to "hola Eloy", "Juan" to "hola Juan", "Casimiro" to "hola Casimiro")
+        Log.i("Maps", pruebalista.map { "${it.value}" }.joinToString(", "))
         data class Person(val name: String, val age: Int, val gender: String){
                 fun copia() = "$name, $age, $gender"
         }
